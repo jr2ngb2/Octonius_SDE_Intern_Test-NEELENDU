@@ -1,9 +1,12 @@
 {
-  "name": "node-todo",
+  "name": "todo",
   "version": "0.0.1",
-  "description": "Simple todo application.",
-  "main": "server.js",
-  "author": "Scotch",
+  "description": "Todo application.",
+  
+  "author": "Neelendu",
+  "Scripts":{
+	"start":"node dw1.js"
+},
   "dependencies": {
     "body-parser": "^1.18.2",
     "mongoose": "4.10.8",
