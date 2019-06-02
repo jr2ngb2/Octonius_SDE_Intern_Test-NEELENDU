@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser  = require('body-parser');
 var db1;
 var vl = 0;
-//var mongoclient = require('mongodb').MongoClient;
+var mongoclient = require('mongodb').MongoClient;
 
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8084;
@@ -20,6 +20,7 @@ console.log(process.env.PORT);
 
 mongoose.connect('mongodb://dwql4:dwql456@ds231207.mlab.com:31207/dwql2',{useNewUrlParser: true} , function(err,dbjw){
 
+console.log("this1");
 if(err)
 {
 return console.log(err);
@@ -44,6 +45,7 @@ aplw.get('/api/q' , function(req,res){
 		{
 				if(err)
 				{
+					console.log("error is 1");
 					res.send(err);
 				}
 				
