@@ -4,7 +4,7 @@
   "description": "Todo application.",
   
   "author": "Neelendu",
-  "Scripts":{
+  "scripts":{
 	"start":"node dw1.js"
 },
   "dependencies": {
