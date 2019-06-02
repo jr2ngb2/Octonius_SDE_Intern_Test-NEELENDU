@@ -18,12 +18,9 @@ return console.log(err);
 console.log("no error");
 db1 = dbjw;
 
-aplw.listen(process.env.PORT , function(err , kq8){
-if(err)
-{
-	console.log(err);
-}
+aplw.listen(port , function(){
 console.log("connect1");	
+console.log(process.env.PORT);
 });
 });
 
