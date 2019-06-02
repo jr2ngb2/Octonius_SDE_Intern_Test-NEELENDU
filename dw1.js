@@ -8,7 +8,7 @@ var vl = 0;
 //var mongoclient = require('mongodb').MongoClient;
 
 var mongoose = require('mongoose');
-var PORT = process.env.PORT || 8084;
+var port = process.env.PORT || 8084;
 mongoose.connect('mongodb://dwql4:dwql456@ds231207.mlab.com:31207/dwql2',{useNewUrlParser: true} , function(err,dbjw){
 
 if(err)
@@ -18,7 +18,7 @@ return console.log(err);
 console.log("no error");
 db1 = dbjw;
 
-aplw.listen(PORT,function(err , kq8){
+aplw.listen(port,function(err , kq8){
 if(err)
 {
 	console.log(err);
