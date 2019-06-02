@@ -1,7 +1,7 @@
 var express = require('express');
 var aplw  =  express();	
 var path = require('path');
-var session = require('express-session');
+//var session = require('express-session');
 var bodyParser  = require('body-parser');
 var db1;
 var vl = 0;
