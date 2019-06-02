@@ -9,6 +9,15 @@ var vl = 0;
 
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8084;
+aplw.listen(process.env.PORT || 8080 , function(err , kq8){
+if(err)
+{
+	console.log(err);
+}
+console.log("connect1");	
+console.log(process.env.PORT);
+});
+
 mongoose.connect('mongodb://dwql4:dwql456@ds231207.mlab.com:31207/dwql2',{useNewUrlParser: true} , function(err,dbjw){
 
 if(err)
@@ -17,16 +26,8 @@ return console.log(err);
 }
 console.log("no error");
 db1 = dbjw;
+});
 
-aplw.listen(process.env.PORT || 8080 , function(err , kq8){
-if(err)
-{
-	console.log(err);
-}
-console.log("connect1");	
-//console.log(process.env.PORT);
-});
-});
 
 aplw.use(bodyParser.urlencoded({extended:true}));
 aplw.use(bodyParser.json());                                    
