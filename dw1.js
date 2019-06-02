@@ -40,15 +40,15 @@ var model1  = mongoose.model('Todo' , {
 aplw.get('/api/q' , function(req,res){
 
 		console.log("entered get");
-		// model1.find(function(err,kq1)
-		// {
-		// 		if(err)
-		// 		{
-		// 			res.send(err);
-		// 		}
+		model1.find(function(err,kq1)
+		{
+				if(err)
+				{
+					res.send(err);
+				}
 				
-		// 		res.json(kq1);
-		// });
+				res.json(kq1);
+		});
 
 });
 
