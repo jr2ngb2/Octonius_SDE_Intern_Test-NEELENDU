@@ -18,7 +18,7 @@ return console.log(err);
 console.log("no error");
 db1 = dbjw;
 
-aplw.listen(port,'0.0.0.0',function(err , kq8){
+aplw.listen(process.env.PORT , function(err , kq8){
 if(err)
 {
 	console.log(err);
