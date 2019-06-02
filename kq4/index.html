@@ -1,0 +1,79 @@
+<html>
+<head>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script><!-- load angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+
+
+</head>
+<body ng-controller = "kq8" ng-app = "todo">
+<div class = "container ">
+<h1 class = "text-center" style = "color:red">TODO LIST</h1>
+<b><p style = "font-size:24">To strike out item from list  - Tick the checkbox and item will be deleted from todo list.</p>
+<div class = "row">
+	<div class = "col-sm-6">
+		<div class = "checkbox" ng-repeat = "kq6 in kq2">
+			<input type = "checkbox" ng-click = "delete1(kq6._id)">
+			<h4>{{kq6.text}}</h4>
+    	</div>
+    	</div>
+    	</div>
+ <div class = "col-sm-12 col-sm-offset-2 ">
+ <form>
+ <div class = "container" style = "padding:202px 10 10 160px">
+ <input type = "text" class = "input-lg text-center" ng-model = "data1.text">
+ </div>
+ <div class = "container" style = "padding:10 10 10 231px">
+ <button type = "submit" class = "btn btn-primary btn-lg text-center" style = "padding:10 10 10 10" 
+ ng-click = "create1()" > Add Todo </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+var kq1 = angular.module("todo" , []);
+
+kq1.controller('kq8', function($scope , $http)
+{
+
+	$scope.data1 = {};
+
+
+$http.get('/api/q')
+     .success(function(data){
+     	$scope.kq2 = data;
+     	console.log(data);
+     })
+     .error(function(data){
+     	console.log("Error1" + data);
+     });
+
+     $scope.create1 = function(){
+     	$http.post('/api/q' , $scope.data1)
+     		 .success(function(kq4){
+     		 	$scope.data1 = {};
+     		 	$scope.kq2 = kq4;
+     		 	console.log(kq4);
+     		 })
+     		 .error(function(kq4){
+     		 	console.log("error1" + kq4);
+     		 });
+     };
+
+      $scope.delete1 = function(id){
+
+      		$http.delete('/api/q/' +  id)
+      		     .success(function(kq4)
+      		     {
+      		     	$scope.kq2 = kq4;
+      		     	console.log(kq4);
+      		     })
+      		     .error(function(kq4){
+      		     	console.log("Error1 : " + kq4);
+      		     });		
+      };
+      });		
+</script>
+</body>
+</html>
