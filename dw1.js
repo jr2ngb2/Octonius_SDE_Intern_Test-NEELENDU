@@ -6,8 +6,9 @@ var bodyParser  = require('body-parser');
 var db1;
 var vl = 0;
 //var mongoclient = require('mongodb').MongoClient;
-var mongoose = require('mongoose');
 
+var mongoose = require('mongoose');
+const PORT = process.env.PORT || 8084;
 mongoose.connect('mongodb://dwql4:dwql456@ds231207.mlab.com:31207/dwql2',{useNewUrlParser: true} , function(err,dbjw){
 
 if(err)
@@ -17,7 +18,7 @@ return console.log(err);
 console.log("no error");
 db1 = dbjw;
 
-aplw.listen(8084,function(err , kq8){
+aplw.listen(PORT,function(err , kq8){
 if(err)
 {
 	console.log(err);
